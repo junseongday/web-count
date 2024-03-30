@@ -1,6 +1,6 @@
 node {
 stage('Clone repository') {
-git credentialsId: 'github_access_token', url: 'https://github.com/junseongday/web-count.git'
+git branch: 'main', git credentialsId: 'github_access_token', url: 'https://github.com/junseongday/web-count.git'
 }
 stage('Build image') {
 dockerImage = docker.build("junseongday/web_count:v1.0")
